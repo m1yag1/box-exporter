@@ -84,3 +84,13 @@ Create a bash script:
     export DATABASE_URL=postgres://postgres@localhost/db
 
     boxex /app/sql/query.sql research_export-$(date '+%Y-%m-%d').csv
+
+
+Add the following line to your crontab file
+
+::
+
+    30  18  *   *   *   /app/bin/export_data.sh
+
+The following will run everyday at 6:30PM
+
