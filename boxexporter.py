@@ -18,7 +18,8 @@ def to_csv(field_names, collection):
         return {att: get_att(model, att) for att in field_names}
 
     def make_writer(sio):
-        return csv.DictWriter(sio, field_names, dialect='excel')
+        return csv.DictWriter(sio, field_names, dialect='excel',
+                              quoting=csv.QUOTE_NONNUMERIC)
 
     # yield header
     sio = StringIO()
@@ -67,7 +68,8 @@ class BoxClient(object):
         return Client(self.auth)
 
     def upload(self, stream, filename):
-        self.client.folder(folder_id=self.folder_id).upload_stream(stream, filename)
+        self.client.folder(folder_id=self.folder_id).upload_stream(stream,
+                                                                   filename)
 
 
 def cli():

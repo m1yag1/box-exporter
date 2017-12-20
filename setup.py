@@ -4,7 +4,7 @@ requires = ['docopt', 'records', 'boxsdk[jwt]', 'psycopg2']
 
 setup(
     name='box-exporter',
-    version='0.0.1',
+    version='0.0.2',
     description='A utility that allows you to export data from a database to a '
                 'folder on box',
     long_description='',
